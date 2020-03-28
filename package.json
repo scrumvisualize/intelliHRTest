@@ -1,0 +1,25 @@
+{
+  "name": "intellihr",
+  "version": "1.0.0",
+  "description": "Cypress UI tests for intelliHR",
+  "main": "index.js",
+  "scripts": {
+    "cy:run": "cypress run",
+    "get-token-intellihr": "node getToken.js && mv tokenData.json cypress/fixtures",
+    "cy:open-intelliHR": "npm run get-token-intellihr && cypress open",
+    "cy:test-intelliHR": "set CYPRESS_RETRIES=2 && npm run get-token-intellihr && cypress run --spec cypress/integration/**/* --browser electron"
+  },
+  "author": "Vinod",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/config": "0.0.34",
+    "cypress-file-upload": "^4.0.2",
+    "cypress-plugin-retries": "^1.2.2",
+    "mocha": "^5.2.0"
+  },
+  "dependencies": {
+    "cypress": "^4.0.2",
+    "dateformat": "^3.0.3",
+    "puppeteer": "^1.17.0"
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "baseUrl": "https://vinod-demo.intellihrdev.net/auth/login",
+  "numTestsKeptInMemory": 3,
+  "chromeWebSecurity": false
+}
