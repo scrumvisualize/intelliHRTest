@@ -2,21 +2,20 @@
 context('Login and Logout test',()=>{
 
     before(()=>{
-     cy.visit('/');
+    cy.visit('/');
     })
 
     beforeEach(() => {
-    cy.wait(2000);
+    
     cy.loadTokens();
-    //cy.restoreLocalStorage();
-    //cy.loginRequest();
+    cy.loginRequest();
     
     })
 
-
     it.only('Check whether the login to intelliHr is successfull',()=>{
+        cy.wait(5000);
         cy.viewport(1600, 1000);
-        //cy.loginTointelliHr();
+        cy.loginTointelliHr();
         cy.get('#offCanvasLeft > ul > li > a > span').eq(1).invoke('text').then((text)=>{
             expect(text).to.equal("Dashboard");
         })
